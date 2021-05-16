@@ -1,0 +1,210 @@
+/* === CSS variables === */
+:root {
+  --bg-body: hsl(222, 26%, 31%);
+  --bg-toggle-keypad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+
+  --keys-1-bg: hsl(225, 21%, 49%);
+  --keys-1-shadow: hsl(224, 28%, 35%);
+  --keys-2-bg: hsl(6, 63%, 50%);
+  --keys-2-shadow: hsl(6, 70%, 34%);
+  --keys-3-bg: hsl(30, 25%, 89%);
+  --keys-3-shadow: hsl(28, 16%, 65%);
+
+  --text-1: hsl(221, 14%, 31%);
+  --text-2: hsl(0, 0%, 100%);
+
+  --padding: 1.5rem;
+}
+
+/* === CSS Resets === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* === CSS Components === */
+/* buttons */
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 0.3em;
+  outline: none;
+  line-height: 1;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.88);
+}
+
+.btn--1 {
+  font-size: 1.125rem;
+  background: var(--keys-1-bg);
+  color: var(--text-2);
+  box-shadow: 0 0.2em var(--keys-1-shadow);
+}
+.btn--2 {
+  background: var(--keys-2-bg);
+  color: var(--text-2);
+  box-shadow: 0 0.2em var(--keys-2-shadow);
+}
+.btn--3 {
+  background: var(--keys-3-bg);
+  color: var(--text-1);
+  box-shadow: 0 0.2em var(--keys-3-shadow);
+}
+
+.btn--large {
+  grid-column: span 2;
+}
+
+/* toggle */
+.toggle {
+  width: 4.5rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 0.4rem;
+}
+
+.toggle input {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.toggle label {
+  cursor: pointer;
+}
+
+.toggle__slider {
+  grid-column: span 3;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 1rem;
+  background: var(--bg-toggle-keypad);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle__slider::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--keys-2-bg);
+  transition: all 0.3s ease-in-out;
+}
+
+#dark:checked ~ .toggle__slider::before {
+  left: 5px;
+  transform: translateX(0);
+}
+
+#light:checked ~ .toggle__slider::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#weird:checked ~ .toggle__slider::before {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+/* === CSS Page Styles === */
+body {
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 2.125rem;
+  background: var(--bg-body);
+  color: var(--text-2);
+  padding: var(--padding);
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(min-content, 33.75rem);
+  justify-content: center;
+}
+
+.container {
+  /* nothing here */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+nav label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+nav > label {
+  margin-bottom: 0.2rem;
+}
+
+nav > * + * {
+  margin-left: 1rem;
+}
+
+.screen {
+  margin-top: 2rem;
+  padding: var(--padding);
+  background: var(--bg-screen);
+  border-radius: 0.5rem;
+  min-width: 327px; /* delete this */
+  text-align: right;
+}
+
+.screen .operation {
+  font-size: 1.15rem;
+  display: none;
+}
+
+.screen .result {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.keypad {
+  margin-top: var(--padding);
+  background: var(--bg-toggle-keypad);
+  padding: var(--padding);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 3.75rem);
+  gap: 0.8125rem;
+}
+
+/* === CSS Media Queries === */
+@media (min-width: 500px) {
+  :root {
+    --padding: 2rem;
+  }
+
+  .keypad {
+    gap: 1.5rem;
+  }
+}

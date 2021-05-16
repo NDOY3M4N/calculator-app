@@ -5,11 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div>calc</div>
+      <nav>
+        <label>Theme</label>
+        <div class="toggle">
+          <label for="dark">1</label>
+          <input id="dark" name="theme" type="radio" checked>
+          <label for="light">2</label>
+          <input id="light" name="theme" type="radio">
+          <label for="weird">3</label>
+          <input id="weird" name="theme" type="radio">
 
+          <div class="toggle__slider"></div>
+        </div>
+      </nav>
+    </header>
 
+    <main>
+      <div class="screen">
+        <div class="operation">
+          <span class="operation__operand1">12</span>
+          <span class="operation__operator">x</span>
+          <span class="operation__operand2">2</span>
+        </div>
+        <div class="result">24</div>
+      </div>
+      <div class="keypad">
+        <button class="btn btn--3">7</button>
+        <button class="btn btn--3">8</button>
+        <button class="btn btn--3">9</button>
+        <button class="btn btn--1">DEL</button>
+        <button class="btn btn--3">4</button>
+        <button class="btn btn--3">5</button>
+        <button class="btn btn--3">6</button>
+        <button class="btn btn--3">+</button>
+        <button class="btn btn--3">1</button>
+        <button class="btn btn--3">2</button>
+        <button class="btn btn--3">3</button>
+        <button class="btn btn--3">-</button>
+        <button class="btn btn--3">.</button>
+        <button class="btn btn--3">0</button>
+        <button class="btn btn--3">/</button>
+        <button class="btn btn--3">x</button>
+        <button class="btn btn--1 btn--large">RESET</button>
+        <button class="btn btn--2 btn--large">=</button>
+      </div>
+    </main>
+  </div>
 
   <!-- <div class="attribution"> -->
   <!--   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. -->
