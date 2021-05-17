@@ -172,16 +172,16 @@ body {
   font-weight: 700;
   font-size: 2.125rem;
   background: var(--bg-body);
-  padding: var(--padding);
   color: var(--cl-white);
-  display: grid;
-  min-height: 100vh;
-  grid-template-columns: minmax(min-content, 33.75rem);
-  justify-content: center;
 }
 
 .container {
-  /* nothing here */
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(min-content, 33.75rem);
+  gap: 2rem;
+  place-content: center;
+  padding: var(--padding);
 }
 
 header {
@@ -210,7 +210,6 @@ nav > * + * {
 }
 
 .screen {
-  margin-top: 2rem;
   padding: var(--padding);
   background: var(--bg-screen);
   border-radius: 0.5rem;
@@ -247,5 +246,9 @@ nav > * + * {
 
   .keypad {
     gap: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
   }
 }
