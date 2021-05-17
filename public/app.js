@@ -4,20 +4,26 @@ const body = document.body
 
 // Function for switching theme
 const updateTheme = (theme) => {
-  switch (theme) {
-    case 'light':
-      body.classList.remove('weird')
-      body.classList.add('light')
-      break
-    case 'weird':
-      body.classList.remove('light')
-      body.classList.add('weird')
-      break
-    default:
-      body.classList.remove('weird')
-      body.classList.remove('light')
-      break
-  }
+  body.classList.add('theme-change')
+
+  setTimeout(() => {
+    body.classList.remove('theme-change')
+
+    switch (theme) {
+      case 'light':
+        body.classList.remove('weird')
+        body.classList.add('light')
+        break
+      case 'weird':
+        body.classList.remove('light')
+        body.classList.add('weird')
+        break
+      default:
+        body.classList.remove('weird')
+        body.classList.remove('light')
+        break
+    }
+  }, 400)
 }
 
 // We cycle through the inputs
