@@ -1,20 +1,62 @@
-/* === CSS variables === */
+/* === CSS variables & Themes === */
 :root {
   --bg-body: hsl(222, 26%, 31%);
   --bg-toggle-keypad: hsl(223, 31%, 20%);
   --bg-screen: hsl(224, 36%, 15%);
 
-  --keys-1-bg: hsl(225, 21%, 49%);
-  --keys-1-shadow: hsl(224, 28%, 35%);
-  --keys-2-bg: hsl(6, 63%, 50%);
-  --keys-2-shadow: hsl(6, 70%, 34%);
-  --keys-3-bg: hsl(30, 25%, 89%);
-  --keys-3-shadow: hsl(28, 16%, 65%);
+  --bg-keys-1: hsl(225, 21%, 49%);
+  --shadow-keys-1: hsl(224, 28%, 35%);
+  --bg-keys-2: hsl(6, 63%, 50%);
+  --shadow-keys-2: hsl(6, 70%, 34%);
+  --bg-keys-3: hsl(30, 25%, 89%);
+  --shadow-keys-3: hsl(28, 16%, 65%);
 
-  --text-1: hsl(221, 14%, 31%);
-  --text-2: hsl(0, 0%, 100%);
+  --cl-1: hsl(221, 14%, 31%);
+  --cl-white: hsl(0, 0%, 100%);
 
   --padding: 1.5rem;
+}
+
+.light {
+  --bg-body: hsl(222, 0%, 90%);
+  --bg-toggle-keypad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+
+  --bg-keys-1: hsl(185, 42%, 37%);
+  --shadow-keys-1: hsl(185, 58%, 25%);
+  --bg-keys-2: hsl(25, 98%, 40%);
+  --shadow-keys-2: hsl(25, 99%, 27%);
+  --bg-keys-3: hsl(45, 7%, 89%);
+  --shadow-keys-3: hsl(35, 11%, 61%);
+
+  --cl-1: hsl(60, 10%, 19%);
+
+  color: var(--cl-1);
+}
+
+.weird {
+  --bg-body: hsl(268, 75%, 9%);
+  --bg-toggle-keypad: hsl(268, 71%, 12%);
+
+  --bg-keys-1: hsl(281, 89%, 26%);
+  --shadow-keys-1: hsl(285, 91%, 52%);
+  --bg-keys-2: hsl(176, 100%, 44%);
+  --shadow-keys-2: hsl(177, 92%, 70%);
+  --bg-keys-3: hsl(268, 47%, 21%);
+  --shadow-keys-3: hsl(290, 70%, 36%);
+
+  --cl-1: hsl(52, 100%, 62%);
+  --cl-2: hsl(198, 20%, 13%);
+
+  color: var(--cl-1);
+}
+
+.weird .screen {
+  background: var(--bg-toggle-keypad);
+}
+
+.weird .btn--2 {
+  color: var(--cl-2);
 }
 
 /* === CSS Resets === */
@@ -40,29 +82,29 @@ html {
   border-radius: 0.3em;
   outline: none;
   line-height: 1;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
 .btn:active {
-  transform: scale(0.88);
+  transform: scale(0.98);
 }
 
 .btn--1 {
   font-size: 1.125rem;
-  background: var(--keys-1-bg);
-  color: var(--text-2);
-  box-shadow: 0 0.2em var(--keys-1-shadow);
+  background: var(--bg-keys-1);
+  color: var(--cl-white);
+  box-shadow: 0 0.2em var(--shadow-keys-1);
 }
 .btn--2 {
-  background: var(--keys-2-bg);
-  color: var(--text-2);
-  box-shadow: 0 0.2em var(--keys-2-shadow);
+  background: var(--bg-keys-2);
+  color: var(--cl-white);
+  box-shadow: 0 0.2em var(--shadow-keys-2);
 }
 .btn--3 {
-  background: var(--keys-3-bg);
-  color: var(--text-1);
-  box-shadow: 0 0.2em var(--keys-3-shadow);
+  background: var(--bg-keys-3);
+  color: var(--cl-1);
+  box-shadow: 0 0.2em var(--shadow-keys-3);
 }
 
 .btn--large {
@@ -105,7 +147,7 @@ html {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background: var(--keys-2-bg);
+  background: var(--bg-keys-2);
   transition: all 0.3s ease-in-out;
 }
 
@@ -130,8 +172,8 @@ body {
   font-weight: 700;
   font-size: 2.125rem;
   background: var(--bg-body);
-  color: var(--text-2);
   padding: var(--padding);
+  color: var(--cl-white);
   display: grid;
   min-height: 100vh;
   grid-template-columns: minmax(min-content, 33.75rem);
@@ -172,7 +214,6 @@ nav > * + * {
   padding: var(--padding);
   background: var(--bg-screen);
   border-radius: 0.5rem;
-  min-width: 327px; /* delete this */
   text-align: right;
 }
 

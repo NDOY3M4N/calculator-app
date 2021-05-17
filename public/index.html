@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculator app using CSS and JS">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Calculator app</title>
+
+  <script src="app.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -17,11 +20,11 @@
         <label>Theme</label>
         <div class="toggle">
           <label for="dark">1</label>
-          <input id="dark" name="theme" type="radio" checked>
+          <input id="dark" name="theme" value="dark" type="radio" checked>
           <label for="light">2</label>
-          <input id="light" name="theme" type="radio">
+          <input id="light" name="theme" value="light" type="radio">
           <label for="weird">3</label>
-          <input id="weird" name="theme" type="radio">
+          <input id="weird" name="theme" value="weird" type="radio">
 
           <div class="toggle__slider"></div>
         </div>
@@ -35,7 +38,7 @@
           <span class="operation__operator">x</span>
           <span class="operation__operand2">2</span>
         </div>
-        <div class="result">24</div>
+        <div class="result">0</div>
       </div>
       <div class="keypad">
         <button class="btn btn--3">7</button>
