@@ -33,32 +33,27 @@
 
     <main>
       <div class="screen">
-        <div class="operation">
-          <span class="operation__operand1">12</span>
-          <span class="operation__operator">x</span>
-          <span class="operation__operand2">2</span>
-        </div>
-        <div class="result">0</div>
+        <!-- <div class="result"></div> -->
       </div>
       <div class="keypad">
-        <button class="btn btn--3">7</button>
-        <button class="btn btn--3">8</button>
-        <button class="btn btn--3">9</button>
-        <button class="btn btn--1">DEL</button>
-        <button class="btn btn--3">4</button>
-        <button class="btn btn--3">5</button>
-        <button class="btn btn--3">6</button>
-        <button class="btn btn--3">+</button>
-        <button class="btn btn--3">1</button>
-        <button class="btn btn--3">2</button>
-        <button class="btn btn--3">3</button>
-        <button class="btn btn--3">-</button>
-        <button class="btn btn--3">.</button>
-        <button class="btn btn--3">0</button>
-        <button class="btn btn--3">/</button>
-        <button class="btn btn--3">x</button>
-        <button class="btn btn--1 btn--large">RESET</button>
-        <button class="btn btn--2 btn--large">=</button>
+        <button data-type="number" class="btn btn--3">7</button>
+        <button data-type="number" class="btn btn--3">8</button>
+        <button data-type="number" class="btn btn--3">9</button>
+        <button data-type="delete" class="btn btn--1">DEL</button>
+        <button data-type="number" class="btn btn--3">4</button>
+        <button data-type="number" class="btn btn--3">5</button>
+        <button data-type="number" class="btn btn--3">6</button>
+        <button data-type="operator" class="btn btn--3">+</button>
+        <button data-type="number" class="btn btn--3">1</button>
+        <button data-type="number" class="btn btn--3">2</button>
+        <button data-type="number" class="btn btn--3">3</button>
+        <button data-type="operator" class="btn btn--3">-</button>
+        <button data-type="decimal" class="btn btn--3">.</button>
+        <button data-type="number" class="btn btn--3">0</button>
+        <button data-type="operator" class="btn btn--3">/</button>
+        <button data-type="operator" class="btn btn--3">x</button>
+        <button data-type="reset" class="btn btn--1 btn--large">RESET</button>
+        <button data-type="operator" class="btn btn--2 btn--large">=</button>
       </div>
     </main>
   </div>
