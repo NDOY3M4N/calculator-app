@@ -203,7 +203,8 @@ body {
 .container {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: minmax(min-content, 33.75rem);
+  /* grid-template-columns: minmax(min-content, 33.75rem); */
+  grid-template-columns: 100%;
   gap: 2rem;
   place-content: center;
   padding: var(--padding);
@@ -239,14 +240,6 @@ nav > * + * {
   background: var(--bg-screen);
   border-radius: 0.5rem;
   text-align: right;
-}
-
-.screen .operation {
-  font-size: 1.15rem;
-  display: none;
-}
-
-.screen .result {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -267,6 +260,10 @@ nav > * + * {
 @media (min-width: 500px) {
   :root {
     --padding: 2rem;
+  }
+
+  .container {
+    grid-template-columns: 33.75rem;
   }
 
   .keypad {
