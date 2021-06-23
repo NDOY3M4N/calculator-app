@@ -49,6 +49,11 @@ if (lightTheme.matches) {
   lightInput.checked = true
 
   updateTheme('light')
+} else {
+  const lightInput = inputs[0]
+  lightInput.checked = true
+
+  updateTheme('dark')
 }
 
 // === Arithmetic Operations logic here === //
